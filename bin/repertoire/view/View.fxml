@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="375.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="repertoire.view.Controller">
+   <center>
+      <GridPane prefHeight="158.0" prefWidth="364.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="235.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.0" minWidth="0.0" prefWidth="259.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Label text="Personnes" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="7.0" top="7.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <ListView fx:id="listViewPersonnes" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="172.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Nom :" />
+                        <Label text="Prénom :" GridPane.rowIndex="1" />
+                        <TextField fx:id="textFieldNom" GridPane.columnIndex="1" />
+                        <TextField fx:id="textFieldPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <StackPane GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hboxPersonneAjout" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#doPersonneValider" text="Valider" />
+                                    <Button mnemonicParsing="false" onAction="#doPersonneAnnuler" text="Annuler" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hboxPersonneModif" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#doPersonneAjouter" text="Ajouter" />
+                                    <Button fx:id="buttonPersonneModifier" mnemonicParsing="false" onAction="#doPersonneModifier" text="Modifier" />
+                                    <Button fx:id="buttonPersonneSupprimer" mnemonicParsing="false" onAction="#doPersonneSupprimer" text="Supprimer" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </GridPane>
+               </bottom>
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <top>
+                  <Label text="Adresses" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="7.0" top="7.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="73.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="171.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Rue :" />
+                        <Label text="Code Postal :" GridPane.rowIndex="1" />
+                        <Label text="Ville :" GridPane.rowIndex="2" />
+                        <TextField fx:id="textFieldRue" GridPane.columnIndex="1" />
+                        <TextField fx:id="textFieldCodePostal" maxWidth="-Infinity" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="textFieldVille" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                        <StackPane GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hboxAdresseAjout" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#doAdresseValider" text="Valider" />
+                                    <Button mnemonicParsing="false" onAction="#doAdresseAnnuler" text="Annuler" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hboxAdresseModif" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="buttonAdresseAjouter" mnemonicParsing="false" onAction="#doAdresseAjouter" text="Ajouter" />
+                                    <Button fx:id="buttonAdresseModifier" mnemonicParsing="false" onAction="#doAdresseModifier" text="Modifier" />
+                                    <Button fx:id="buttonAdresseSupprimer" mnemonicParsing="false" onAction="#doAdresseSupprimer" text="Supprimer" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </GridPane>
+               </bottom>
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+               <center>
+                  <ListView fx:id="listViewAdresses" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="11.0" prefWidth="482.0" spacing="7.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doTest1" text="Test 1" />
+            <Button fx:id="buttonAttacher" mnemonicParsing="false" onAction="#doAttacher" text="Attacher" />
+            <Button fx:id="buttonDetacher" mnemonicParsing="false" onAction="#doDetacher" text="Détacher" />
+            <Button mnemonicParsing="false" onAction="#doTest2" text="Test 2" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="7.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>
